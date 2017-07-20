@@ -87,7 +87,7 @@ namespace MineSweeper
             while (bombsMade < numBombs)
             {
                 int nextW = r.Next(0, tiles.Length), nextH = r.Next(0, tiles[0].Length);
-                while (Math.Abs(nextW - x) < 2 || Math.Abs(nextH - y) < 2 || contains(points, new Point(nextW, nextH)))
+                while (nextW == x || nextH == y || contains(points, new Point(nextW, nextH)))
                 {
                     nextW = r.Next(0, tiles.Length);
                     nextH = r.Next(0, tiles[0].Length);
@@ -448,6 +448,10 @@ namespace MineSweeper
             }
             return new int[] { -1, -1 };
         }
-    
+
+        private void customToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon lol");
+        }
     }
 }
